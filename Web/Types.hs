@@ -15,3 +15,13 @@ data ViewContext = ViewContext
     , controllerContext :: ControllerSupport.ControllerContext
     , layout :: Layout
     }
+
+data ProjectsController
+    = ProjectsAction
+    | NewProjectAction
+    | ShowProjectAction { projectId :: !(Id Project) }
+    | CreateProjectAction
+    | EditProjectAction { projectId :: !(Id Project) }
+    | UpdateProjectAction { projectId :: !(Id Project) }
+    | DeleteProjectAction { projectId :: !(Id Project) }
+    deriving (Eq, Show, Data)
